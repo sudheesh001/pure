@@ -4,33 +4,63 @@ Pure Change History
 NEXT
 ----
 
-!!TODO: This needs a lot of work: Missing issue numbers, and more details,
-written in past tense.
-
-* Removed `white-space: nowrap` from `.pure-table thead`. ([#95][])
-
-* Removed the gray color of forms' labels. ([#89][])
-
-* Fix class `.pure-u-1-6` to change width from 16.656% to 16.666%. (Issue #?)
-
-* Apply `.pure-form-group input` styling to all text-ish `input` elements.
-  (Issue #?)
-
-* Added `display: block` to `textarea` in `.pure-form-stacked` to fix an
-  alignment issue for subsequent elements ([#90][])
-
-* Grid unit `pure-u-1` is now `{ display: inline-block; width: 100%; }` instead
-  of `{ display: block; }` ([#94][])
-
-* Pure Buttons no longer inherit from `a:visited` style rules on a page.
-  ([#87][])
 
 
-[#87]: https://github.com/yui/pure/issues/87
+
+0.2.1 (2013-07-17)
+------------------
+
+### Forms
+
+* (!) Made `[readonly]` `<input>`s look visually different to `[disabled]` and
+  regular `<input>`s. ([#102][]: @jaseg)
+
+* Fixed copy/paste bug that mapped text inputs to `.pure-form` instead of
+  `.pure-group`. The `.pure-form-group input` styles are now applied to all
+  text-ish `<input>` elements. ([#96][])
+
+* Fixed `.pure-input-rounded` styles to now apply correctly. The change to use
+  more specific selectors for text-ish inputs in v0.2.0 caused the
+  `.pure-input-rounded` selector to not apply because it was less specific. This
+  selector now has right specificity. ([#109][]: @AurelioDeRosa)
+
+* Added `display: block` to `<textarea>`s in `.pure-form-stacked` `<form>`s to
+  fix an alignment issue for subsequent elements. ([#90][]: @AurelioDeRosa)
+
+* Removed the gray `color` from `.pure-form label`. This allows `<label>`s to
+  inherit their foreground color. ([#89][]: @AurelioDeRosa)
+
+### Grids
+
+* (!) Changed `.pure-u-1` grid unit to now use `width: 100%` instead of
+  `display: block` to achieve taking up the full width of its container. This
+  makes it easier to override and align since it's using `display: inline-block`
+  like the other grid units. ([#94][])
+
+* Fixed `width` value typo in `.pure-u-1-6`, changed it from `16.656%` to
+  `16.666%`. ([#115][]: @chilts)
+
+### Menus
+
+* (!) Fixed broken styling of active paginator items by using Grids CSS rules to
+  layout items horizontally; this makes sure the active item isn't overlapped.
+  ([#127][])
+
+### Tables
+
+* Removed `white-space: nowrap` from `.pure-table thead`. This fixes issues
+  where tables inside of grids would break the grid. ([#95][]: @AurelioDeRosa)
+
+
 [#89]: https://github.com/yui/pure/issues/89
 [#90]: https://github.com/yui/pure/issues/90
 [#94]: https://github.com/yui/pure/issues/94
 [#95]: https://github.com/yui/pure/issues/95
+[#96]: https://github.com/yui/pure/issues/96
+[#102]: https://github.com/yui/pure/issues/102
+[#109]: https://github.com/yui/pure/issues/109
+[#115]: https://github.com/yui/pure/issues/115
+[#127]: https://github.com/yui/pure/issues/127
 
 
 0.2.0 (2013-06-11)
@@ -87,7 +117,7 @@ written in past tense.
 
 ### Menus
 
-* Added `pure-menu-separator` classname that can be used to visually
+* Added `.pure-menu-separator` classname that can be used to visually
   separate horizontal menu items. ([#53][]: @codepb, @mseri)
 
 * Focused menus have an `outline: none` by default. Instead, menu-items that
